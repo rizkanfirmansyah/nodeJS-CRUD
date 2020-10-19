@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row mt-1">
+    <div class="container">
+        <h2>{{title}}</h2>
+    </div>
+</div>
+    <!--  table -->
+<div class="row">
+    <div class="container">
+    <table id="MyTable" class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">No ID</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%  for d in data %}
+            <tr>
+                <td>{{ d.id }}</td>
+                <td>{{ d.nama }}</td>
+                <td>{{ d.alamat }}</td>
+                <td>
+                    <a href="/update/{{d.id}}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/delete/{{d.id}}" onclick="return confirm('Apakah anda yakin?')" class="btn btn-sm btn-danger">Hapus</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+        <a href="/insert" class="btn btn-sm btn-primary mb-5">Insert Data</a>
+    </div>
+</div>
+
+{% endblock %}
