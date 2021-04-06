@@ -2,6 +2,8 @@
 <h1>UJI COBA CRUD</h1>
 
 Stack yang dipake
-Node JS
-MySQL
-DataTables
+- Node JS
+- MySQL
+- DataTables
+- Botstrapp 4
+- 
